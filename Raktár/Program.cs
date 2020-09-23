@@ -11,6 +11,8 @@ namespace Raktár
     {
         static void Main(string[] args)
         {
+            Termék t = new Termék("P01","Póló XXL",1500,10);
+            Console.WriteLine($"{t.Kod} - {t.Nev} - {t.Ar} - {t.DB}");
             Console.ReadKey();
         }
     }
