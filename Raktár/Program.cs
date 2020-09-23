@@ -9,10 +9,28 @@ namespace Raktár
 {
     class Program
     {
+        static void BeolvasRaktar()
+        {
+            StreamReader raktar = new  StreamReader("raktar.csv");
+            while (!raktar.EndOfStream)
+            {
+                /* sor[0] -> Kód
+                 * sor[1] -> Név
+                 * sor[2] -> Ár
+                 * sor[3] -> Darabszám
+                 */
+
+                string[] sor = raktar.ReadLine().Split(';');
+
+            }
+            raktar.Close();
+        }
         static void Main(string[] args)
         {
-            Termék t = new Termék("P01","Póló XXL",1500,10);
-            Console.WriteLine($"{t.Kod} - {t.Nev} - {t.Ar} - {t.DB}");
+            //Termék t = new Termék("P01","Póló XXL",1500,10);
+            //Console.WriteLine($"{t.Kod} - {t.Nev} - {t.Ar} - {t.DB}");
+            BeolvasRaktar();
+
             Console.ReadKey();
         }
     }
