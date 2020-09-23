@@ -9,6 +9,7 @@ namespace Raktár
 {
     class Program
     {
+        List<Termék> termekek = new List<Termék>();
         static void BeolvasRaktar()
         {
             StreamReader raktar = new  StreamReader("raktar.csv");
