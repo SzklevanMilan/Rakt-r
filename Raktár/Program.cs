@@ -12,7 +12,7 @@ namespace Raktár
         static List<Termék> termekek = new List<Termék>();
         static void BeolvasRaktar()
         {
-            StreamReader raktar = new  StreamReader("raktar.csv");
+            StreamReader raktar = new StreamReader("raktar.csv");
             while (!raktar.EndOfStream)
             {
                 /* sor[0] -> Kód
@@ -30,9 +30,14 @@ namespace Raktár
         {
             //Termék t = new Termék("P01","Póló XXL",1500,10);
             //Console.WriteLine($"{t.Kod} - {t.Nev} - {t.Ar} - {t.DB}");
+
             BeolvasRaktar();
 
-            Console.ReadKey();
+            foreach (var t in termekek)
+            {
+                Console.WriteLine(t.Nev);
+            }
+        Console.ReadKey();
+            }
         }
     }
-}
