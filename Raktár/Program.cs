@@ -9,7 +9,7 @@ namespace Raktár
 {
     class Program
     {
-        List<Termék> termekek = new List<Termék>();
+        static List<Termék> termekek = new List<Termék>();
         static void BeolvasRaktar()
         {
             StreamReader raktar = new  StreamReader("raktar.csv");
@@ -22,7 +22,7 @@ namespace Raktár
                  */
 
                 string[] sor = raktar.ReadLine().Split(';');
-
+                termekek.Add(new Termék(sor[0], sor[1], int.Parse(sor[2]), int.Parse(sor[3])));
             }
             raktar.Close();
         }
