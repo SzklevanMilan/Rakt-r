@@ -30,11 +30,19 @@ namespace Raktár
             set { email = value; }
         }
 
+        private List<Tétel> tetelek;
+
+        public void TetelHozzaAd(string kod,int db)
+        {
+            tetelek.Add(new Tétel(kod, db));
+        }
+
         public Megrendeles(string datum, string kod, string email)
         {
             this.datum = datum;
             this.kod = kod;
             this.email = email;
+            tetelek = new List<Tétel>();
         }
 
 
